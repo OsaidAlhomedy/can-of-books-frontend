@@ -11,7 +11,8 @@ class Login extends React.Component {
     return (
       <>
         {!isAuthenticated && (
-          <Card style={{ width: "18rem" }}>
+
+          <Card className='mt-5 mb-5' style={{ width: "18rem" }}>
             <Card.Body>
               <Card.Title>Log In</Card.Title>
               <Card.Text>Click Below to Log In</Card.Text>

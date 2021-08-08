@@ -1,6 +1,7 @@
 # Project Name
 
 **Author**: Osaid Alhomedy (Aseed Alhameedi) / Khaled Alqrainy
+
 **Version**: 0.8.0
 
 ## Overview
@@ -9,7 +10,11 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 
 ## Getting Started
 
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+* Go to the website https://can-of-books-ok.netlify.app/
+
+* Login to the profile.
+
+* Display the bookshelf and the user data.
 
 ## Architecture
 
@@ -22,9 +27,10 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 
 ## Change Log
 
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+08-08-2021 12:49pm - The basic structure of the application has been deployed to the web.
+
+08-08-2021 03:00pm - The application has been supported with authentication using Auth0 SDK and has been re-styled.
 
 ## Credit and Collaborations
 
@@ -50,17 +56,27 @@ Make a list of each parson’s strengths.
 
 Osaid:
 
-1. Understand front-end react concepts and data flow.
+* Understand front-end react concepts and data flow.
 
-2.
+
 
 Khaled:
 
+*  The ability to understand the issues and solve it.
+
+
 How can you best utilize these strengths in the development of your application?
+
+* We can utilize our strengths to collaborate together in the front-end side and communicate with the back-end server using our understanding of the relationship between different Javascript libraries.
 
 In what areas do you each want to develop greater strength?
 
+* We both would love to develop better understanding of the HTTP get and post methods for the authentication tokens.
+
 Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development?
+
+* By working together and set up meetings during the day.
+
 
 ## Time estimation
 
@@ -68,9 +84,9 @@ Name of feature: #1 Set up your repositories
 
 Estimate of time needed to complete: 1 Hour
 
-Start time: 12:15
+Start time: 12:15 pm
 
-Finish time: 12:50
+Finish time: 12:50 pm
 
 Actual time needed to complete: 35 Minutes
 
@@ -80,8 +96,8 @@ Name of feature: #2 Authentication
 
 Estimate of time needed to complete: 1 Hour
 
-Start time: 1:00
+Start time: 1:00 pm
 
-Finish time:
+Finish time: 3:00 pm
 
-Actual time needed to complete:
+Actual time needed to complete: 2 hours
