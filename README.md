@@ -66,10 +66,22 @@ Knowing that every person in your team needs to understand the code, how do you 
 
 Name of feature: #1 Set up your repositories
 
-Estimate of time needed to complete: 1 hour
+Estimate of time needed to complete: 1 Hour
 
 Start time: 12:15
 
-Finish time: _____
+Finish time: 12:50
 
-Actual time needed to complete: _____
+Actual time needed to complete: 35 Minutes
+
+---
+
+Name of feature: #2 Authentication
+
+Estimate of time needed to complete: 1 Hour
+
+Start time: 1:00
+
+Finish time:
+
+Actual time needed to complete:
