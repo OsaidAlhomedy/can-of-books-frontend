@@ -10,11 +10,11 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 
 ## Getting Started
 
-* Go to the website https://can-of-books-ok.netlify.app/
+- Go to the website https://can-of-books-ok.netlify.app/
 
-* Login to the profile.
+- Login to the profile.
 
-* Display the bookshelf and the user data.
+- Display the bookshelf and the user data.
 
 ## Architecture
 
@@ -24,9 +24,9 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 4. Bootstrap React
 5. NodeJs
 6. dotenv
+7. Axios
 
 ## Change Log
-
 
 08-08-2021 12:49pm - The basic structure of the application has been deployed to the web.
 
@@ -56,27 +56,23 @@ Make a list of each parson’s strengths.
 
 Osaid:
 
-* Understand front-end react concepts and data flow.
-
-
+- Understand front-end react concepts and data flow.
 
 Khaled:
 
-*  The ability to understand the issues and solve it.
-
+- The ability to understand the issues and solve it.
 
 How can you best utilize these strengths in the development of your application?
 
-* We can utilize our strengths to collaborate together in the front-end side and communicate with the back-end server using our understanding of the relationship between different Javascript libraries.
+- We can utilize our strengths to collaborate together in the front-end side and communicate with the back-end server using our understanding of the relationship between different Javascript libraries.
 
 In what areas do you each want to develop greater strength?
 
-* We both would love to develop better understanding of the HTTP get and post methods for the authentication tokens.
+- We both would love to develop better understanding of the HTTP get and post methods for the authentication tokens.
 
 Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development?
 
-* By working together and set up meetings during the day.
-
+- By working together and set up meetings during the day.
 
 ## Time estimation
 
@@ -101,3 +97,15 @@ Start time: 1:00 pm
 Finish time: 3:00 pm
 
 Actual time needed to complete: 2 hours
+
+---
+
+Name of feature: #3 Book Component
+
+Estimate of time needed to complete: 2 Hour
+
+Start time: 4:00 pm
+
+Finish time: 7:00 pm
+
+Actual time needed to complete: 3 hours
