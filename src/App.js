@@ -5,10 +5,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MyFavoriteBooks from "./BestBooks";
 import Login from "./Login";
 import Profile from "./components/Profile";
+import { withAuth0 } from "@auth0/auth0-react";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      booksData: [],
+    };
+  }
+
   render() {
-    console.log("app", this.props);
     return (
       <>
         <Router>
@@ -16,7 +23,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/">
-              <MyFavoriteBooks />
+              <MyFavoriteBooks booksData={this.state.booksData} />
               <Login />
               {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
             </Route>
@@ -33,4 +40,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuth0(App);

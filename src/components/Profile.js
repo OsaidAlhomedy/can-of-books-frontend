@@ -6,7 +6,6 @@ import { Container, Row , Image, Col} from "react-bootstrap";
 class Profile extends Component {
   render() {
     const { user, isAuthenticated } = this.props.auth0;
-    console.log(user);
     return (
       <>
         {isAuthenticated && (
