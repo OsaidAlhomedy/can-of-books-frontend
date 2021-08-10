@@ -122,3 +122,15 @@ Start time: 5:20
 Finish time: 7:20
 
 Actual time needed to complete: 2 hrs.
+
+---
+
+Name of feature: #5 Delete.
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 7:30
+
+Finish time: 10:00
+
+Actual time needed to complete: 4 hrs
