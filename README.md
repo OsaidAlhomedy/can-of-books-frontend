@@ -25,6 +25,7 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 5. NodeJs
 6. dotenv
 7. Axios
+8. fast-deep-equal
 
 ## Change Log
 
@@ -109,3 +110,15 @@ Start time: 4:00 pm
 Finish time: 7:00 pm
 
 Actual time needed to complete: 3 hours
+
+---
+
+Name of feature: #4 Create.
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 5:20
+
+Finish time: 7:20
+
+Actual time needed to complete: 2 hrs.
