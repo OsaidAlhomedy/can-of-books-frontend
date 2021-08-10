@@ -45,7 +45,7 @@ class App extends React.Component {
     };
 
     axios
-      .post(`${process.env.REACT_APP_URL}/addBooks`, bookData)
+      .post(`${process.env.REACT_APP_URL}/books`, bookData)
       .then((result) => {
         this.setState({
           booksData: result.data,
@@ -55,6 +55,20 @@ class App extends React.Component {
         console.log("the error is", err);
       });
   };
+
+  removeBook = (id) => {
+    const { user } = this.props.auth0;
+    axios
+    .delete(`${process.env.REACT_APP_URL}/books/${id}`, {params: {email:user.email}})
+    .then(result => {
+      this.setState ({
+        booksData: result.data,
+      })
+    })
+    .catch (err => {
+      console.log("the error is", err);
+    }) 
+  } 
 
   render() {
     const { isAuthenticated } = this.props.auth0;
@@ -68,6 +82,7 @@ class App extends React.Component {
                 <MyFavoriteBooks
                   showFormModal={this.showFormModal}
                   booksData={this.state.booksData}
+                  removeBook={this.removeBook}
                 />
               )}
               {!isAuthenticated && <Login />}

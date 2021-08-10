@@ -40,7 +40,7 @@ class MyFavoriteBooks extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (!equal(this.props.booksData, prevProps.booksData)) {
+    if (this.props.booksData != prevProps.booksData) {
       this.getData();
     }
   }
@@ -60,6 +60,9 @@ class MyFavoriteBooks extends React.Component {
                   <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     <Card.Text>{item.description}</Card.Text>
+                    <Button onClick={()=> this.props.removeBook(item.id)} variant="danger">
+                      Delete Book
+                    </Button> 
                     <Card.Footer>
                       <small className="text-muted">
                         {item.status ? "Available" : "Not Available"}
@@ -70,12 +73,12 @@ class MyFavoriteBooks extends React.Component {
               );
             })}
         </CardGroup>
-        <Row className="mt-4 ">
-          <Col className="text-align-center" md={12}>
-            <Button onClick={this.props.showFormModal} variant="primary">
+        <Row className="mt-4 text-center" md={12} >
+          
+            <Button onClick={this.props.showFormModal} variant="primary" >
               ADD NEW BOOK
             </Button>
-          </Col>
+          
         </Row>
       </>
     );
