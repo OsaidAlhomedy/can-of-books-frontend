@@ -6,9 +6,56 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MyFavoriteBooks from "./BestBooks";
 import Login from "./Login";
 import Profile from "./components/Profile";
+import BookFormModal from "./components/BookFormModal";
 import { withAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+    };
+  }
+
+  showFormModal = () => {
+    this.setState({
+      showModal: true,
+    });
+  };
+
+  hideFormModal = () => {
+    this.setState({
+      showModal: false,
+    });
+  };
+
+  handleSubmitting = (event) => {
+    event.preventDefault();
+    const { user } = this.props.auth0;
+    const bookTitle = event.target.title.value;
+    const bookDescription = event.target.description.value;
+    const bookStatus = event.target.select.value;
+
+    const bookData = {
+      title: bookTitle,
+      description: bookDescription,
+      email: user.email,
+      status: bookStatus,
+    };
+
+    axios
+      .post(`${process.env.REACT_APP_URL}/addBooks`, bookData)
+      .then((result) => {
+        this.setState({
+          booksData: result.data,
+        });
+      })
+      .catch((err) => {
+        console.log("the error is", err);
+      });
+  };
+
   render() {
     const { isAuthenticated } = this.props.auth0;
     return (
@@ -17,8 +64,18 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/">
-              {isAuthenticated && <MyFavoriteBooks />}
+              {isAuthenticated && (
+                <MyFavoriteBooks
+                  showFormModal={this.showFormModal}
+                  booksData={this.state.booksData}
+                />
+              )}
               {!isAuthenticated && <Login />}
+              <BookFormModal
+                show={this.state.showModal}
+                hideFormModal={this.hideFormModal}
+                handleSubmitting={this.handleSubmitting}
+              />
               {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
             </Route>
             <Route exact path="/profile">

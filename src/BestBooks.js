@@ -1,9 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Carousel } from "react-bootstrap";
+import { Card, CardGroup, Button, Row, Col } from "react-bootstrap";
 import "./BestBooks.css";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
+import equal from "fast-deep-equal";
 
 class MyFavoriteBooks extends React.Component {
   constructor(props) {
@@ -38,26 +39,45 @@ class MyFavoriteBooks extends React.Component {
     this.getData();
   }
 
+  componentDidUpdate(prevProps) {
+    if (!equal(this.props.booksData, prevProps.booksData)) {
+      this.getData();
+    }
+  }
+
   render() {
     return (
-      <Carousel>
-        {this.state.booksData &&
-          this.state.booksData.map((item) => {
-            return (
-              <Carousel.Item interval={1000}>
-                <img
-                  className="d-block w-100"
-                  src="https://via.placeholder.com/1000x300.png/363533?text=Books+Poster+Place+Holder"
-                  alt="First slide"
-                />
-                <Carousel.Caption>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-            );
-          })}
-      </Carousel>
+      <>
+        <CardGroup>
+          {this.state.booksData &&
+            this.state.booksData.map((item) => {
+              return (
+                <Card style={{ width: "18rem" }}>
+                  <Card.Img
+                    variant="top"
+                    src="https://via.placeholder.com/300"
+                  />
+                  <Card.Body>
+                    <Card.Title>{item.title}</Card.Title>
+                    <Card.Text>{item.description}</Card.Text>
+                    <Card.Footer>
+                      <small className="text-muted">
+                        {item.status ? "Available" : "Not Available"}
+                      </small>
+                    </Card.Footer>
+                  </Card.Body>
+                </Card>
+              );
+            })}
+        </CardGroup>
+        <Row className="mt-4 ">
+          <Col className="text-align-center" md={12}>
+            <Button onClick={this.props.showFormModal} variant="primary">
+              ADD NEW BOOK
+            </Button>
+          </Col>
+        </Row>
+      </>
     );
   }
 }
