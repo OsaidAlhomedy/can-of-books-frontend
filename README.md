@@ -134,3 +134,15 @@ Start time: 7:30
 Finish time: 10:00
 
 Actual time needed to complete: 4 hrs
+
+---
+
+Name of feature: #6 Update.
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 10:00
+
+Finish time: 11:00
+
+Actual time needed to complete: 1 hrs

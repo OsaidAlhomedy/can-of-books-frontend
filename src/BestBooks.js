@@ -1,10 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, CardGroup, Button, Row, Col } from "react-bootstrap";
+import { Card, CardGroup, Button, Row } from "react-bootstrap";
 import "./BestBooks.css";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-import equal from "fast-deep-equal";
 
 class MyFavoriteBooks extends React.Component {
   constructor(props) {
@@ -40,7 +39,7 @@ class MyFavoriteBooks extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.booksData != prevProps.booksData) {
+    if (this.props.booksData !== prevProps.booksData) {
       this.getData();
     }
   }
@@ -60,9 +59,25 @@ class MyFavoriteBooks extends React.Component {
                   <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     <Card.Text>{item.description}</Card.Text>
-                    <Button onClick={()=> this.props.removeBook(item.id)} variant="danger">
+                    <Button
+                      onClick={() => this.props.removeBook(item.id)}
+                      variant="danger"
+                    >
                       Delete Book
-                    </Button> 
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        this.props.showUpdateModal(
+                          item.id,
+                          item.title,
+                          item.description,
+                          item.status
+                        )
+                      }
+                      variant="success"
+                    >
+                      Update Book
+                    </Button>
                     <Card.Footer>
                       <small className="text-muted">
                         {item.status ? "Available" : "Not Available"}
@@ -73,12 +88,10 @@ class MyFavoriteBooks extends React.Component {
               );
             })}
         </CardGroup>
-        <Row className="mt-4 text-center" md={12} >
-          
-            <Button onClick={this.props.showFormModal} variant="primary" >
-              ADD NEW BOOK
-            </Button>
-          
+        <Row className="mt-4 text-center" md={12}>
+          <Button onClick={this.props.showFormModal} variant="primary">
+            ADD NEW BOOK
+          </Button>
         </Row>
       </>
     );
